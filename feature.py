@@ -11,7 +11,7 @@ IMG_SCALE_SIZE_W = 224
 IMG_SCALE_SIZE_H = 224
 
 # 加载特征提取模型
-FE_MODEL = models.resnet152(pretrained=True)  # 导入ResNet50的预训练模型
+FE_MODEL = models.resnet50(pretrained=True)  # 导入ResNet50的预训练模型
 
 
 """
