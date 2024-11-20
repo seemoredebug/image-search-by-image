@@ -83,7 +83,7 @@ def insert_data(table_name, data):
                 'embedding': item['embedding']
             }
             entities.append(entity)
-        print("data: --- "+data)
+        print(f"data: --- {data}")
         mr = collection.insert(entities)
 
         # 验证数据是否插入成功
