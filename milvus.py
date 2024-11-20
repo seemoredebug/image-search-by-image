@@ -205,6 +205,8 @@ def delete_by_key_batch(table_name, keys):
 """
 def create_a_data(key, filepath, embedding):
     try:
+        if filepath is None:
+            filepath = ""
         data = {
             'key': key,
             'filepath': filepath,
