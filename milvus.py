@@ -124,6 +124,7 @@ def search_similar_vectors(table_name, query_vector, limit):
         )
         collection.release()
         res_datas = []
+        print(results)
         for item in results[0]:
             res_datas.append(item.entity.to_dict().get('entity'))
         return res_datas
