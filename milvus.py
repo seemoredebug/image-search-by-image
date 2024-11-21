@@ -123,10 +123,18 @@ def search_similar_vectors(table_name, query_vector, limit):
             consistency_level="Strong"
         )
         collection.release()
-        res_datas = []
         print(results)
-        for item in results[0]:
-            res_datas.append(item.entity.to_dict().get('entity'))
+        res_datas = []
+        for item in results[0]:  # 遍历第一个结果集
+            res_data = {
+                'id': item.entity.get('id'),  # 获取 ID
+                'key': item.entity.get('key'),  # 获取 key
+                'filepath': item.entity.get('filepath'),  # 获取 filepath
+                'distance': item.distance  # 获取相似度（距离）
+            }
+            res_datas.append(res_data)
+        # for item in results[0]:
+        #     res_datas.append(item.entity.to_dict().get('entity'))
         return res_datas
     except Exception as e:
         print(f"An error occurred: {str(e)}")
